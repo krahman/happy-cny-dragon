@@ -14,10 +14,12 @@ before_script:
   - npm install -g @angular/cli
   - npm install -g nyc
   - npm install codecov -g
+  - npm install -g angular-cli-ghpages
 
 script:
   - nyc npm test
-  - ng build --prod
+  - ng build --prod --base-href "https://krahman.github.io/happy-cny-dragon/"
+  - ngh
 
 after_success:
   - codecov
