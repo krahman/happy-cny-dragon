@@ -5,6 +5,8 @@ environment:
 install:
   - ps: Install-Product node $env:nodejs_version
   - yarn install --no-progress
+  - npm install -g ync
+  - npm install -g codecov
 
 test_script:
   - yarn ng -- build --prod --aot --no-progress
