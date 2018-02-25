@@ -12,7 +12,11 @@ before_install:
 
 before_script:
   - npm install -g @angular/cli
+  - npm install codecov -g
 
 script:
   - node_modules/karma/bin/karma start --config=karma.conf.js --single-run
   - ng build --prod
+
+after_success:
+  - codecov
