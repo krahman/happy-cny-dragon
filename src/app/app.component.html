@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to the {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <div class="container">
+    <app-dragon [dragon]="dragon"></app-dragon>
+    <app-warrior [warrior]="warrior"></app-warrior>
+  </div>
+  <div class="container">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-success" (click)="attack(false)" [disabled]="completed">Attack</button>
+      <button type="button" class="btn btn-danger" (click)="blast()" [disabled]="completed">Blast</button>
+      <button type="button" class="btn btn-info" (click)="heal()" [disabled]="completed || !started">Heal</button>
+      <button type="button" class="btn btn-primary" (click)="reset()" [disabled]="!started">{{completed ? 'Play Again' : 'Give Up'}}</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+           [ngStyle]="{'width': warriorWins ? 0 : dragonLife + '%', 'background-color': 'red'}">Dragon</div>
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+           [ngStyle]="{'width': dragonWins ? 0 : warriorLife + '%', 'background-color': 'green'}">Warrior</div>
+    </div>
+  </div>
+  <div class="container" *ngIf="started">
+    <app-comments [comments]="comments"></app-comments>
+  </div>
+</div>
+
+

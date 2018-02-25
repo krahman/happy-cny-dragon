@@ -1,0 +1,11 @@
+@import "variables";
+@import "mixins";
+
+@import "../app/app.component";
+@import "../components/dragon/dragon.component";
+@import "../components/warrior/warrior.component";
+@import "../components/comments/comments.component";
+@import "../components/comments/item/comment.component";
+
+
+@import "~bootstrap/dist/css/bootstrap.css";

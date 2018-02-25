@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">Game Commentary</h4>
+    <ul class="list-group list-group-flush">
+      <app-comment *ngFor="let comment of comments.reverse()" [comment]="comment"></app-comment>
+    </ul>
+  </div>
+</div>

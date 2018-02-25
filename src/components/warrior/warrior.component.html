@@ -1,0 +1,7 @@
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+       [ngStyle]="{
+       'width': warrior.health + '%',
+       'background-color': 'green',
+       'color': warrior.health > 0 ? 'white' : 'black'}">{{warrior.title}}</div>
+</div>

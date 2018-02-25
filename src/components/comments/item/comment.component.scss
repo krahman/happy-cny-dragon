@@ -1,0 +1,11 @@
+app-comment:nth-child(odd) {
+  .list-group-item {
+    background: #eeeeee;
+  }
+}
+
+app-comment:nth-child(even) {
+  .list-group-item {
+    background: none;
+  }
+}
