@@ -6,10 +6,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "test": "ng test",
+    "test": "karma start --config=karma.conf.js --single-run",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "report-coverage": "codecov"
+    "posttest": "nyc report --reporter=json > coverage/coverage.json && codecov -f coverage/*.json"
   },
   "private": true,
   "dependencies": {
