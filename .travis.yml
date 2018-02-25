@@ -19,7 +19,6 @@ before_script:
 script:
   - nyc npm test
   - ng build --prod --base-href "https://krahman.github.io/happy-cny-dragon/"
-  - angular-cli-ghpages --repo=https://github.com/krahman/happy-cny-dragon.git --name="Khalilur Rahman" --email=khal.rahman@gmail.com
 
 after_success:
   - codecov
