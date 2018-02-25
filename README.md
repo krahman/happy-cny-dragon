@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/krahman/happy-cny-dragon.svg?branch=master)](https://travis-ci.org/krahman/happy-cny-dragon) [![Build Status](https://ci.appveyor.com/api/projects/status/github/krahman/happy-cny-dragon?branch=master&svg=true)](https://ci.appveyor.com/project/krahman/happy-cny-dragon)
+[![Build Status](https://travis-ci.org/krahman/happy-cny-dragon.svg?branch=master)](https://travis-ci.org/krahman/happy-cny-dragon) [![codecov](https://codecov.io/gh/krahman/happy-cny-dragon/branch/master/graph/badge.svg)](https://codecov.io/gh/krahman/happy-cny-dragon) [![Build Status](https://ci.appveyor.com/api/projects/status/github/krahman/happy-cny-dragon?branch=master&svg=true)](https://ci.appveyor.com/project/krahman/happy-cny-dragon)
 
 # DragonBattle
 https://krahman.github.io/happy-cny-dragon/
