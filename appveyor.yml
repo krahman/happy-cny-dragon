@@ -7,11 +7,9 @@ install:
   - yarn install --no-progress
   - npm install -g ync
   - npm install -g codecov
-  - npm install -g angular-cli-ghpages
 
 test_script:
-  - nyc npm test
-  - ng build --prod --base-href "https://krahman.github.io/happy-cny-dragon/"
-  - ngh
+  - yarn ng -- build --prod --aot --no-progress
+  - yarn test -- --single-run --no-progress
 
 build: off
