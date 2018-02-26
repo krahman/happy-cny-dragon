@@ -2,7 +2,7 @@
   padding: 20px;
 }
 
-.container-title {
+.container-title, .container-buttons, .container-commentary {
   text-align: center;
 }
 
@@ -27,8 +27,4 @@
       height: 100%;
     }
   }
-}
-
-.container-buttons {
-  text-align: center;
 }

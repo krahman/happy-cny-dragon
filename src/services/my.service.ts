@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
-export class MyService{
-  getMessage(){
+export class MyService {
+  getMessage() {
     return 'real service';
   }
 }

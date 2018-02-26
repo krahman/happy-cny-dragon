@@ -33,7 +33,7 @@
            [ngStyle]="{'width': dragonWins ? 0 : warriorLife + '%', 'background-color': 'green'}">Warrior</div>
     </div>
   </div>
-  <div class="container" *ngIf="started">
+  <div class="container container-commentary" *ngIf="started">
     <app-comments [comments]="comments"></app-comments>
   </div>
 </div>

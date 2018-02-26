@@ -51,7 +51,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Battle of Dragon!');
+    expect(compiled.querySelector('h3').textContent).toContain('Battle of Dragon!');
   }));
   it('should attach message from service to component', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
