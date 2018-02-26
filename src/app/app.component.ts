@@ -31,12 +31,28 @@ export class AppComponent {
     this.reset();
   }
 
+  static newMessage(attacker, target, power) {
+    return `${attacker} attacks ${target} for ${power}`;
+  }
+
+  static completeMessage(attacker, target) {
+    return `${attacker} killed ${target}`;
+  }
+
+  static getPower(isPowerful) {
+    let power = Math.floor((Math.random() * 10) + 1);
+    if (isPowerful) {
+      power *= 2;
+    }
+    return Promise.resolve(power);
+  }
+
   attack(isPowerful) {
 
     this.startGame();
 
     if (!this.completed || this.warrior.getHealth() > 0) {
-      return this.getPower(isPowerful)
+      return AppComponent.getPower(isPowerful)
         .then((power) => {
           this.logComment('Warrior', 'Dragon', power);
           return this.dragon.gotHit(power);
@@ -59,7 +75,7 @@ export class AppComponent {
   gotHitBack(isPowerful) {
 
     if (!this.completed || this.dragon.getHealth() > 0) {
-      return this.getPower(isPowerful)
+      return AppComponent.getPower(isPowerful)
         .then((power) => {
           this.logComment('Dragon', 'Warrior', power);
           return this.warrior.gotHit(power);
@@ -82,7 +98,7 @@ export class AppComponent {
     this.startGame();
 
     if (!this.completed || this.warrior.getHealth() > 0) {
-      return this.getPower(false)
+      return AppComponent.getPower(false)
         .then((power) => {
           return this.warrior.addHealth(power);
         })
@@ -102,14 +118,6 @@ export class AppComponent {
 
     const isPowerful = true;
     this.attack(isPowerful);
-  }
-
-  getPower(isPowerful) {
-    let power = Math.floor((Math.random() * 10) + 1);
-    if (isPowerful) {
-      power *= 2;
-    }
-    return Promise.resolve(power);
   }
 
   warriorWon() {
@@ -152,21 +160,13 @@ export class AppComponent {
     comment.target = target;
     comment.power = power;
     if (this.completed) {
-      comment.message = this.completeMessage(attacker, target);
+      comment.message = AppComponent.completeMessage(attacker, target);
     } else {
-      comment.message = this.newMessage(attacker, target, power);
+      comment.message = AppComponent.newMessage(attacker, target, power);
     }
     this.addComment(comment);
     this.getCurrentWarriorDamageDiff();
     this.getCurrentDragonDamageDiff();
-  }
-
-  newMessage(attacker, target, power) {
-    return `${attacker} attacks ${target} for ${power}`;
-  }
-
-  completeMessage(attacker, target) {
-    return `${attacker} killed ${target}`;
   }
 
   startGame() {
@@ -183,6 +183,9 @@ export class AppComponent {
     if (health === 0) {
       return this.warriorLife = 50;
     } else {
+      if (this.warriorLife + health >= 100) {
+        return 100;
+      }
       return this.warriorLife += health;
     }
   }
@@ -196,6 +199,9 @@ export class AppComponent {
     if (health === 0) {
       return this.dragonLife = 50;
     } else {
+      if (this.dragonLife + health >= 100) {
+        return 100;
+      }
       return this.dragonLife += health;
     }
   }
